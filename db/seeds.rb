@@ -10,6 +10,7 @@ require 'json'
 require_relative '../config/environment'
 require 'byebug'
 #pokemon.each do |pokemon|
+Pokemon.destroy_all
 pm_array = []
 desc_array = []
 
@@ -30,8 +31,8 @@ for pokemon in pm_array
       name: pokemon["name"],
       front_img: pokemon["sprites"]["front_default"],
       back_img: pokemon["sprites"]["back_default"],
-      description: desc_array[pokemon["id"] - 1]["flavor_text_entries"][desc_array[pokemon["id"] - 1]["flavor_text_entries"].length - 1]["flavor_text"],
+      description: desc_array[pokemon["id"] - 1]["flavor_text_entries"][0]["flavor_text"],
       pokemontype: pokemon["types"][pokemon["types"].length - 1]["type"]["name"],
-      pokedex_number: 
+      pokedex_number: pokemon["order"],
     )
 end
