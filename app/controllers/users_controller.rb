@@ -19,7 +19,7 @@ class UsersController < ApplicationController
           redirect_to user_path(@user)
         else
           flash[:error] = "Something went wrong"
-          render new_user_path()
+          redirect_to new_user_path()
         end
     end
     
