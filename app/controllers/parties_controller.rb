@@ -14,7 +14,35 @@ class PartiesController < ApplicationController
             redirect_to new_party_path()
         end
     end
+    
 
+    def edit
+        @party = Party.find_by(params[:user_id])
+    end
+
+    def update
+        @party = Party.find(params[:id])
+        if @party.update(party_params)
+          flash[:success] = "Party was successfully updated"
+          redirect_to user_path(@party.user)
+        else
+          flash[:error] = "Wild error appeared"
+          redirect_to edit_party_path()
+        end
+    end
+    
+    
+    def destroy
+        @party = Party.find_by(params[:user_id])
+        if @party.destroy
+            flash[:success] = 'goodbye, I will tell all the other pokemon you went to a farm upstate.'
+            redirect_to user_path(@party.user)
+        else
+            flash[:error] = 'Wild error appeared'
+            redirect_to user_path(@party.user)
+        end
+    end
+    
 
     private
 

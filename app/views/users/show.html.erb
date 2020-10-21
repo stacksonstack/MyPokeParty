@@ -16,4 +16,16 @@
 <img src= <%=p.front_img %> >
 <%end %> 
 
+<% if @user.parties == []%>
+<%= button_to "Catch Pokemon", new_party_path(@user.id), method: :get%>
+
+
+<% else %>
+<%= button_to "Update Party", edit_party_path(@user.id), method: :get%>
+<%= button_to "Release Pokemon", party_path(@user.id), method: :delete%>
+<%end %>
+
+
+
+
 

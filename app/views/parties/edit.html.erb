@@ -1,0 +1,20 @@
+<h1> Edit your party </h1>
+
+<%= form_for @party do |f| %>
+<%= f.label :user_id%>
+<%# Change so that it knows what user it is automatically %>
+<%= f.collection_select :user_id, User.all, :id, :username %>
+<%= f.label :pokemon1_id %>
+<%= f.collection_select :pokemon1_id, Pokemon.all, :id, :name %>
+<%= f.label :pokemon2_id %>
+<%= f.collection_select :pokemon2_id, Pokemon.all, :id, :name %>
+<%= f.label :pokemon3_id %>
+<%= f.collection_select :pokemon3_id, Pokemon.all, :id, :name %>
+<%= f.label :pokemon4_id %>
+<%= f.collection_select :pokemon4_id, Pokemon.all, :id, :name %>
+<%= f.label :pokemon5_id %>
+<%= f.collection_select :pokemon5_id, Pokemon.all, :id, :name %>
+<%= f.label :pokemon6_id %>
+<%= f.collection_select :pokemon6_id, Pokemon.all, :id, :name %>
+<%= f.submit "Submit party" %>
+<% end%>
