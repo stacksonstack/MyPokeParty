@@ -5,5 +5,15 @@
 <p><b>Favorite Type: </b> <%= @user.favorite_type %></p>
 <p><b>Bio: </b> <%= @user.bio %></p>
 
+<h3>My Party! </h3>
+
+<% @user.pokemons.each do |p| %>
+<%=link_to p.name, pokemon_path(p) %> 
+<%end %> 
+
+
+<% @user.pokemons.each do |p| %>
+<img src= <%=p.front_img %> >
+<%end %> 
 
 
