@@ -1,5 +1,8 @@
+<%= stylesheet_link_tag 'application' %>
+
 <h1>The Original Pokemon</h1>
 
+<% sum = 0%>
 <% @pokemons.each do |pokemon| %>
-<p><%= link_to pokemon.name, pokemon_path(pokemon) %></p>
+<p> <%= sum+=1 %>. <%= link_to pokemon.name, pokemon_path(pokemon) %></p>
 <% end %>

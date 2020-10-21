@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_180613) do
     t.string "username"
     t.integer "age"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.string "bio"
     t.string "favorite_pokemon"
     t.string "favorite_type"

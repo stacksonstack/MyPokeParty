@@ -1,5 +1,10 @@
 class User < ApplicationRecord
     has_many :parties 
+    has_secure_password
+
+    # def display_name_and_age
+    #     "#{self.username} | #{self.age}"
+    # end
 
     # has_many :pokemons, through: :parties
     def pokemons
