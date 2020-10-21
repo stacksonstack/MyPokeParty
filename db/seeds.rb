@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
 #require 'rest-client'
 require_relative '../config/environment'
@@ -31,9 +24,8 @@ for pokemon in pm_array
       name: pokemon["name"],
       front_img: pokemon["sprites"]["front_default"],
       back_img: pokemon["sprites"]["back_default"],
-      description: desc_array[pokemon["id"] - 1]["flavor_text_entries"][desc_array[pokemon["id"] - 1]["flavor_text_entries"].length - 13]["flavor_text"],
+      description: desc_array[pokemon["id"] - 1]["flavor_text_entries"][0]["flavor_text"],
       pokemontype: pokemon["types"][pokemon["types"].length - 1]["type"]["name"],
+      pokedex_number: pokemon["order"],
     )
 end
-
-#1,2,3,6,7, 8,9,10 11,12
