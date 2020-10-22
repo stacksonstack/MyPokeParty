@@ -1,9 +1,15 @@
-html{
-    background-color: yellow;
-}
+
 h1 {
     font-family: pokemonHollow;
     text-align: center; 
-    color: red;
+    color: #003A70;
+    font-size: 80px;
     
 }
+.pokedex{
+    text-align: center;
+    color: #003A70;
+    font-family: "Arial Black", Gadget, sans-serif;
+    
+}
+
