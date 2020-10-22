@@ -4,6 +4,9 @@ require_relative '../config/environment'
 require 'byebug'
 #pokemon.each do |pokemon|
 Pokemon.destroy_all
+User.destroy_all
+Party.destroy_all
+
 pm_array = []
 desc_array = []
 

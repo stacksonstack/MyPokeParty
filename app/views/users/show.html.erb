@@ -1,3 +1,7 @@
+<% if flash[:error] %>
+  <p><%= flash[:error] %></p>
+<% end %>
+
 <h1><%= @user.username %></h1>
 
 <p><b>Age: </b> <%= @user.age %></p>
@@ -16,14 +20,17 @@
 <img src= <%=p.front_img %> >
 <%end %> 
 
-<% if @user.parties == []%>
-<%= button_to "Catch Pokemon", new_party_path(@user.id), method: :get%>
-
-
+<% if @user.parties == [] %>
+    <% if @current_user == @user %>
+        <%= button_to "Catch Pokemon", new_party_path(@user.id), method: :get%>
+    <% end%>
 <% else %>
-<%= button_to "Update Party", edit_party_path(@user.id), method: :get%>
-<%= button_to "Release Pokemon", party_path(@user.id), method: :delete%>
+    <% if @current_user == @user %>
+        <%= button_to "Update Party", edit_party_path(@user.id), method: :get%>
+        <%= button_to "Release Pokemon", party_path(@user.id), method: :delete%>
+    <% end %>
 <%end %>
+
 
 
 

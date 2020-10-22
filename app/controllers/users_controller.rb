@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    skip_before_action :authorized?, only: [:new, :create]
 
     def index
         @users = User.all
@@ -6,6 +7,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find_by(id: params[:id])
+        
     end
 
     def new
@@ -15,10 +17,10 @@ class UsersController < ApplicationController
     def create
         @user = User.create(user_params)
         if @user.valid?
-          flash[:success] = "user successfully created"
+          session[:user_id] = @user.id
           redirect_to user_path(@user)
         else
-          flash[:error] = "Something went wrong"
+          flash[:error] = "A wild error appeared"
           redirect_to new_user_path()
         end
     end

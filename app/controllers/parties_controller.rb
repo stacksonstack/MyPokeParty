@@ -6,11 +6,11 @@ class PartiesController < ApplicationController
 
     def create
         @party = Party.create(party_params)
-        if @party.valid?
+        if @party.valid? 
             flash[:success] = "Party successfully created"
         redirect_to user_path(@party.user)
         else
-            flash[:error] = "Wild error appeared"
+            flash[:error] = "Wild error appeared, You can't create parties for other trainers"
             redirect_to new_party_path()
         end
     end
@@ -22,7 +22,7 @@ class PartiesController < ApplicationController
 
     def update
         @party = Party.find(params[:id])
-        if @party.update(party_params)
+        if @party.update(party_params) 
           flash[:success] = "Party was successfully updated"
           redirect_to user_path(@party.user)
         else
@@ -34,8 +34,8 @@ class PartiesController < ApplicationController
     
     def destroy
         @party = Party.find_by(params[:user_id])
-        if @party.destroy
-            flash[:success] = 'goodbye, I will tell all the other pokemon you went to a farm upstate.'
+        if @party.destroy 
+            flash[:success] = 'Goodbye, I will tell all the other pokemon you went to a farm upstate.'
             redirect_to user_path(@party.user)
         else
             flash[:error] = 'Wild error appeared'

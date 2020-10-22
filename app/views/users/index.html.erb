@@ -1,5 +1,6 @@
 <h1>All Trainers</h1>
 
+
 <% @users.each do |user| %>
 <p><%= link_to user.username, user_path(user) %></p>
 <% end %>
