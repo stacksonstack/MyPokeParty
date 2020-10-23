@@ -1,35 +1,44 @@
 <% if flash[:error] %>
   <p><%= flash[:error] %></p>
 <% end %>
+<div class="wrapper">
+    <div class="trainer-name">
+        <h1><%= @user.username %></h1>
+    </div>
 
-<h1><%= @user.username %></h1>
+    <div class="trainer-info">
+        <h2>About Me</h2>
+        <p><b>Age: </b> <%= @user.age %></p>
+        <p><b>Favorite Pokemon: </b> <%= @user.favorite_pokemon %></p>
+        <p><b>Favorite Type: </b> <%= @user.favorite_type %></p>
+        <p><b>Bio: </b> <%= @user.bio %></p>
+    </div>
 
-<p><b>Age: </b> <%= @user.age %></p>
-<p><b>Favorite Pokemon: </b> <%= @user.favorite_pokemon %></p>
-<p><b>Favorite Type: </b> <%= @user.favorite_type %></p>
-<p><b>Bio: </b> <%= @user.bio %></p>
+    <div class="trainer-party">
+        <div class="p-title">
+            <h2>My Party! </h2>
+        </div>
+        
+        <div class="p-img">
+            <% @user.pokemons.each do |p| %>
+            <a id="p-img" href="<%= pokemon_path(p) %>" ><img class="p-img2" src= <%=p.front_img %> > </a>
+            <%end %> 
+        </div>
+    </div>
 
-<h3>My Party! </h3>
-
-<% @user.pokemons.each do |p| %>
-<%=link_to p.name, pokemon_path(p) %> 
-<%end %> 
- 
-
-<% @user.pokemons.each do |p| %>
-<img src= <%=p.front_img %> >
-<%end %> 
-
-<% if @user.parties == [] %>
-    <% if @current_user == @user %>
-        <%= button_to "Catch Pokemon", new_party_path(@user.id), method: :get%>
-    <% end%>
-<% else %>
-    <% if @current_user == @user %>
-        <%= button_to "Update Party", edit_party_path(@user.id), method: :get%>
-        <%= button_to "Release Pokemon", party_path(@user.id), method: :delete%>
-    <% end %>
-<%end %>
+    <div class="trainer-btn">
+        <% if @user.parties == [] %>
+            <% if @current_user == @user %>
+                <div id="btn"><%= button_to "Catch Pokemon", new_party_path(@user.id), method: :get%></div>
+            <% end%>
+        <% else %>
+            <% if @current_user == @user %>
+                <div id="btn"><%= button_to "Update Party", edit_party_path(@user.id), method: :get%></div>
+                <div id="btn"><%= button_to "Release Pokemon", party_path(@current_user.id), method: :delete%></div>
+            <% end %>
+        <%end %>
+    </div>
+</div>
 
 
 

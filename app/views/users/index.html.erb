@@ -1,6 +1,9 @@
-<h1>All Trainers</h1>
+<div class="test">
+    <h1>All Trainers</h1>
 
-
-<% @users.each do |user| %>
-<p><%= link_to user.username, user_path(user) %></p>
-<% end %>
+    <div class="trainer-index">
+    <% @users.each do |user| %>
+    <p id="trainer-index"><%= link_to user.username, user_path(user) %></p>
+    <% end %>
+    </div>
+</div>

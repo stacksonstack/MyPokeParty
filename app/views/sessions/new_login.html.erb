@@ -1,15 +1,18 @@
-<h1>Trainer Login</h1>
+<div class="login-page">
+  <h1>Trainer Login</h1>
 
-<% if flash[:error] %>
-  <p><%= flash[:error] %></p>
-<% end %>
+  <% if flash[:error] %>
+    <p><%= flash[:error] %></p>
+  <% end %>
+  <div class="login-form">
+    <%= form_for :session do |f| %>
+      <%= f.label :email %>
+      <%= f.text_field :email  %>
 
-<%= form_for :session do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email  %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.submit %>
-<% end %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

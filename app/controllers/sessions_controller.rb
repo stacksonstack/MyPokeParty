@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
     
     def logout 
         session.delete(:user_id)
-        
-        redirect_back fallback_location: users_path
+        redirect_to new_login_path
+        # redirect_back fallback_location: users_path
       end 
     
       def new_login

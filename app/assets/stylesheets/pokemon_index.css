@@ -9,7 +9,27 @@ h1 {
 .pokedex{
     text-align: center;
     color: #003A70;
-    font-family: "Arial Black", Gadget, sans-serif;
+    font-family: "Arial Black", Gadget, sans-serif;   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
     
+
+}
+
+.poke-index{
+    width: 192px;
+    height: 192px;
+    
+}
+
+.poke-index2{
+    background-color: rgb(255,255,255, 0.3);
+    border-radius: 20px;
+    margin: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
 }
 

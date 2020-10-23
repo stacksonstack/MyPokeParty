@@ -1,0 +1,16 @@
+#signup-title{
+    font-family: pokemonHollow;
+    font-size: 50px;
+    color: #003A70;
+    text-align: center;
+}
+.signup{
+    height: 100vh;
+    padding-left: 50px;
+    padding-right: 50px;
+   
+}
+.signup-form{
+    display: flex;
+    justify-content: center;
+}

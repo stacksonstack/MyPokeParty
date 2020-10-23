@@ -1,0 +1,26 @@
+.trainer-index{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    font-family: "Arial Black", Gadget, sans-serif; 
+    
+    justify-content: center;
+  
+
+}
+
+#trainer-index{
+    background-color: rgb(255,255,255, 0.3);
+    border-radius: 20px;
+    margin: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 300px;
+    
+  
+}
+.test{
+    height: 100vh;
+    
+   
+}

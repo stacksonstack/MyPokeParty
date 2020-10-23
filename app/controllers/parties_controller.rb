@@ -33,7 +33,7 @@ class PartiesController < ApplicationController
     
     
     def destroy
-        @party = Party.find_by(params[:user_id])
+        @party = Party.find_by(user_id: params[:id])
         if @party.destroy 
             flash[:success] = 'Goodbye, I will tell all the other pokemon you went to a farm upstate.'
             redirect_to user_path(@party.user)
