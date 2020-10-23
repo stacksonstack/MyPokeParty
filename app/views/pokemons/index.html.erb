@@ -5,6 +5,8 @@
 <div class="pokedex">
     <% sum = 0%>
     <% @pokemons.each do |pokemon| %>
-    <p> <%= sum+=1 %>. <%= link_to pokemon.name, pokemon_path(pokemon) %></p>
+    <p> <%= sum+=1 %>. <a href="<%= pokemon_path(pokemon) %>" ><%= image_tag pokemon.front_img%> </a></p>
     <% end %>
 </div>
+<%=  %>
+<%# <a><img src="pokemon.png" /></a> %> 

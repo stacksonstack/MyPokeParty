@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+ /* img { image-rendering: pixelated; } */
  html{
   background-color: #3D7DCA;;
 }

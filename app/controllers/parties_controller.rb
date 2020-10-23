@@ -17,7 +17,7 @@ class PartiesController < ApplicationController
     
 
     def edit
-        @party = Party.find_by(params[:user_id])
+        @party = Party.find_by(user_id: params[:id])
     end
 
     def update
