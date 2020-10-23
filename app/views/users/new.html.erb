@@ -2,20 +2,20 @@
     <h2 id="signup-title">Become A Pokemon Trainer!</h2>
     <div class="signup-form">
         <%= form_for @user do |f| %>
-        <%= f.label :username %>
-        <%= f.text_field :username %>
-        <%= f.label :age %>
-        <%= f.number_field :age %>
-        <%= f.label :email %>
-        <%= f.text_field :email %>
-        <%= f.label :password %>
-        <%= f.password_field :password%>
-        <%= f.label "What's your favorite Pokemon?" %>
-        <%= f.text_field :favorite_pokemon %>
-        <%= f.label "What's your favorite Pokemon type?" %>
-        <%= f.text_field :favorite_type %>
-        <%= f.label :bio %>
-        <%= f.text_field :bio %>
+        <%= f.label :username %><br>
+        <%= f.text_field :username %><br><br>
+        <%= f.label :age %><br>
+        <%= f.number_field :age %><br><br>
+        <%= f.label :email %><br>
+        <%= f.text_field :email %><br><br>
+        <%= f.label :password %><br>
+        <%= f.password_field :password%><br><br>
+        <%= f.label "What's your favorite Pokemon?" %><br>
+        <%= f.text_field :favorite_pokemon %><br><br>
+        <%= f.label "What's your favorite Pokemon type?" %><br>
+        <%= f.text_field :favorite_type %><br><br>
+        <%= f.label "Tell us about yourself" %><br>
+        <%= f.text_field :bio %><br><br>
         <%= f.submit "Gotta Catch 'Em All!" %>
         <% end %>
     </div>
