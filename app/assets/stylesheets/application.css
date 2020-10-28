@@ -110,6 +110,24 @@ img { image-rendering: pixelated; }
     float: right;
   }
 
+.edit-party{
+  height: 100vh;
+}
+.edit-party-form{
+  display: flex;
+  justify-content: center;
+  font-family:  Arial, Helvetica, sans-serif;
+}
+.new-party{
+  height: 100vh;
+}
+
+.new-party-form{
+  display: flex;
+  justify-content: center;
+  font-family:  Arial, Helvetica, sans-serif;
+}
+
 
 
 

@@ -1,22 +1,27 @@
+<div class="edit-party">
 <% if flash[:error] %>
   <p><%= flash[:error] %></p>
 <% end %>
 
 <h1> Edit your party </h1>
 
+<div class="edit-party-form">
+
 <%= form_for @party do |f| %>
 <%= f.hidden_field :user_id, value: @current_user.id %>
-<%= f.label :pokemon1_id %>
-<%= f.collection_select :pokemon1_id, Pokemon.all, :id, :name %>
-<%= f.label :pokemon2_id %>
-<%= f.collection_select :pokemon2_id, Pokemon.all, :id, :name %>
-<%= f.label :pokemon3_id %>
-<%= f.collection_select :pokemon3_id, Pokemon.all, :id, :name %>
-<%= f.label :pokemon4_id %>
-<%= f.collection_select :pokemon4_id, Pokemon.all, :id, :name %>
-<%= f.label :pokemon5_id %>
-<%= f.collection_select :pokemon5_id, Pokemon.all, :id, :name %>
-<%= f.label :pokemon6_id %>
-<%= f.collection_select :pokemon6_id, Pokemon.all, :id, :name %>
+<%= f.label :pokemon1_id %><br>
+<%= f.collection_select :pokemon1_id, Pokemon.all, :id, :name %><br><br>
+<%= f.label :pokemon2_id %><br>
+<%= f.collection_select :pokemon2_id, Pokemon.all, :id, :name %><br><br>
+<%= f.label :pokemon3_id %><br>
+<%= f.collection_select :pokemon3_id, Pokemon.all, :id, :name %><br><br>
+<%= f.label :pokemon4_id %><br>
+<%= f.collection_select :pokemon4_id, Pokemon.all, :id, :name %><br><br>
+<%= f.label :pokemon5_id %><br>
+<%= f.collection_select :pokemon5_id, Pokemon.all, :id, :name %><br><br>
+<%= f.label :pokemon6_id %><br>
+<%= f.collection_select :pokemon6_id, Pokemon.all, :id, :name %><br><br>
 <%= f.submit "Submit party" %>
 <% end%>
+</div>
+</div>
