@@ -3,7 +3,7 @@
 MyPokeParty is an app that allows a user to submit their ideal party of 6 out of the original 151 Pokemon. If you are having trouble narrowing it down to only 6, don’t worry, you can update your party as frequently as you like. You can also completely release your Pokemon party if you wish to do so. You don’t need to create an account with us to view our information on each of the original Pokemon or to view any user’s party. However, you must sign up with us in order to post your party.
 
 The steps of using our application are:
-* Fork this repo https://github.com/liamH47/MyPokeParty
+* Fork this repo 
 * In terminal run `bundle install`
 * In terminal run `yarn install --check-files`
 * In terminal run `rails s`
